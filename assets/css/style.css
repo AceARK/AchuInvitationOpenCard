@@ -71,8 +71,6 @@ background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
   border: 1px #996515 solid;
-  content: 'test';
-  align-content: center;
 }
 .card::after {
 	background-image: url(../images/gold_paper_darker.jpg);
@@ -87,7 +85,6 @@ background-repeat: no-repeat;
   background-position: 0 100%;
   bottom: 0;
   border: 1px #996515 solid;  
-  content: 'test';
 }
 
 #content {
