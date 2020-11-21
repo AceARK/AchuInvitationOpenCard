@@ -1,0 +1,147 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  /*background: -webkit-gradient(linear, left bottom, left top, from(#a9ff9c), to(#e9ffe6));*/
+  /*background: linear-gradient(to top, #a9ff9c, #e9ffe6);*/
+  background-image: url(../images/wedding_vilakks_para.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+  overflow: hidden;
+}
+
+.card {
+  -webkit-transition: .7s;
+  transition: .7s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 600px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-blend-mode: exclusion;
+  background-image: url(../images/gold_parchment.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  -webkit-transform: translate3d(-50%, -50%, -50px);
+          transform: translate3d(-50%, -50%, -50px);
+}
+.card:hover::after {
+  -webkit-transform: perspective(1500px) rotateX(130deg);
+          transform: perspective(1500px) rotateX(130deg);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+.card:hover::before {
+  -webkit-transform: perspective(1500px) rotateX(-135deg);
+          transform: perspective(1500px) rotateX(-135deg);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4);
+}
+.card::after, .card::before {
+  -webkit-transition: 2s ease-in-out;
+  transition: 2s ease-in-out;
+  content: '';
+  width: 100%;
+  display: block;
+  position: absolute;
+  /*-webkit-filter: sepia(0.5);
+          filter: sepia(0.5);*/
+  height: 25%;
+    z-index: 10;
+}
+.card::after {
+  -webkit-transform: perspective(1500px) rotateX(5deg);
+          transform: perspective(1500px) rotateX(5deg);
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  top: 0;
+  left: 0;
+  height: 85%;
+background-image: url(../images/simple_ganesh_names.png);
+/*background-image: url(../images/card_top_damask_gold.png);*/
+background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  border: 4px #DAA520 solid;
+}
+.card::before {
+	background-image: url(../images/bg_2.png);
+	/*background-image: url(../images/gold_paper_darker.jpg);*/
+	background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transform: perspective(1500px) rotateX(-2deg);
+          transform: perspective(1500px) rotateX(-2deg);
+  -webkit-transition-delay: 290ms;
+          transition-delay: 290ms;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  background-position: 0 100%;
+  bottom: 0;
+  border: 4px #DAA520 solid;  
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+#content {
+	align-items: center;
+	text-align: center;
+	font-family: 'IM Fell Double Pica', serif;
+	/*font-family: 'Tangerine', serif;*/
+	/*font-family: 'Niconne', serif;*/
+	
+	font-size: 15px;
+	color:#996515;
+	/*color: #CD853F;*/
+	height: 100%;
+	padding: 10px;
+	padding-top: 85px;
+	-webkit-filter: blur(5px);
+      filter: blur(5px);
+	cursor: default;
+}
+
+#content:hover {
+	-webkit-filter: blur(0);
+      filter: blur(0);
+}
+.separate {
+	margin: 9px;
+}
+.with {
+	margin-top: -3px;
+	margin-bottom: -4px;
+}
+#bride, #groom {
+	font-family: 'Playball', serif;
+	font-size: 20px;
+}
+
+#who, #muhurtham, #when {
+	font-weight: 800;
+}
+
+.numberFont {
+	font-family: 'Niconne', serif;
+	font-size: 19px;
+}
+
+/*.magnified {
+	zoom: 0.5;
+    -moz-transform: scale(0.5);
+}
+
+#close {
+	font-weight: 800;
+	font-style: 'Arial';
+	align-content: flex-end;
+}*/
