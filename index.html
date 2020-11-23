@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:ital@1">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style_new_ganesh.css">
-	<!--<script type="text/javascript" src="assets/js/magnify.js"></script>-->
+	<script type="text/javascript" src="assets/js/magnify.js"></script>
 </head>
 <body>
+	<div id="overlayClicker"></div>	
     <div class="card">
 		<div id="content">
 			<div class='separate'>
@@ -30,7 +31,8 @@
 			<div class='separate'>
 				<p id="groom">Gautham</p>
 				<p>(Son of Smt. M. P. Shylaja & M. P. Pavithran,</p>
-				<p>Kathiroor</p>
+				<p>Grandson of late K. K. Damodaran Nambiar & M. P. Rohini Amma</p>
+				<p>late C. Kelappan Nambiar & late M. P. Lakshmikutti Amma</p>
 			</div>
 			<div class='separate'>
 				<p id="when">On Sunday, <span class="numberFont">3</span>rd January <span class="numberFont">2021</span></p>
@@ -48,7 +50,24 @@
 		</div>
 	</div>
 	<audio autoplay loop id="backgroundMusic">
-		<source src="assets/audio/bgm1.mp3">
+		<source src="assets/audio/bgm1.mp3" type="audio/mpeg">
 	</audio>
 </body>
+<script>
+	let audioPlaying = false;
+	document.addEventListener("DOMContentLoaded", () => {
+		document.getElementById('overlayClicker').addEventListener('click', playMusic);
+	});
+	function playMusic() {
+		if(!audioPlaying) {
+			console.log("Trying to play now");
+			audioPlaying = true;
+			document.getElementById('backgroundMusic').play();
+			document.getElementById('overlayClicker').style.display = 'none';
+		} else {
+			console.log("Deregistering event.");
+			document.getElementById('overlayClicker').removeEventListener('click', playMusic);
+		}
+	}
+</script>
 </html>
