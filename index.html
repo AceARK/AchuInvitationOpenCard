@@ -49,25 +49,38 @@
 			</div>
 		</div>
 	</div>
-	<audio autoplay loop id="backgroundMusic">
+	<audio id="backgroundMusic">
+		<source src="assets/audio/bgm1.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="backgroundMusicMobile">
 		<source src="assets/audio/bgm1.mp3" type="audio/mpeg">
 	</audio>
 </body>
 <script>
 	let audioPlaying = false;
 	document.addEventListener("DOMContentLoaded", () => {
-		document.getElementById('overlayClicker').addEventListener('click', playMusic);
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+			document.querySelector('.card').addEventListener('click', playMusic);
+		} else {
+			document.getElementById('overlayClicker').addEventListener('click', playMusic);
+		}		
 	});
 	function playMusic() {
 		if(!audioPlaying) {
 			console.log("Trying to play now");
 			audioPlaying = true;
-			document.getElementById('backgroundMusic').play();
-			document.getElementById('overlayClicker').style.display = 'none';
-			document.getElementById('content').style.visibility = 'visible';
+			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+				document.getElementById('backgroundMusicMobile').play();
+				document.getElementById('content').style.visibility = 'visible';
+			}else{
+				document.getElementById('backgroundMusic').play();
+				document.getElementById('overlayClicker').style.display = 'none';
+				document.getElementById('content').style.visibility = 'visible';
+			}
 		} else {
 			console.log("Deregistering event.");
 			document.getElementById('overlayClicker').removeEventListener('click', playMusic);
+			document.querySelector('.card').removeEventListener('click', playMusic);
 		}
 	}
 </script>

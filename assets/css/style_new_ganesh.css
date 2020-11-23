@@ -21,7 +21,7 @@ body {
   transition: .7s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 600px;
-  height: 500px;
+  height: 515px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,7 +104,7 @@ background-repeat: no-repeat;
 	/*color: #CD853F;*/
 	height: 100%;
 	padding: 10px;
-	padding-top: 85px;
+	padding-top: 86px;
         visibility: hidden;
 }
 
@@ -127,13 +127,14 @@ background-repeat: no-repeat;
 
 .numberFont {
 	font-family: 'Niconne', serif;
-	font-size: 19px;
+	font-size: 21px;
 }
 
 #overlayClicker {
+        visibility: visible;
         background-image: url(../images/ganesh_top_clickable.png);
-        width: 660px;
-        height: 500px;
+        width: 680px;
+        height: 530px;
         position: absolute;
         cursor: pointer;
         border: 6px solid #996515;
@@ -145,4 +146,10 @@ background-repeat: no-repeat;
           background-blend-mode: exclusion;
         background-size: 100% 100%;
         background-repeat: no-repeat;
+  }
+
+@media only screen and (max-width:1024px) {
+  #overlayClicker {
+          visibility: hidden;
+  }
 }
