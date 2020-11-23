@@ -99,21 +99,15 @@ background-repeat: no-repeat;
 	/*font-family: 'Tangerine', serif;*/
 	/*font-family: 'Niconne', serif;*/
 	
-	font-size: 15px;
+	font-size: 17px;
 	color:#996515;
 	/*color: #CD853F;*/
 	height: 100%;
 	padding: 10px;
 	padding-top: 85px;
-	-webkit-filter: blur(5px);
-      filter: blur(5px);
-	cursor: default;
+        visibility: hidden;
 }
 
-#content:hover {
-	-webkit-filter: blur(0);
-      filter: blur(0);
-}
 .separate {
 	margin: 9px;
 }
@@ -123,7 +117,8 @@ background-repeat: no-repeat;
 }
 #bride, #groom {
 	font-family: 'Playball', serif;
-	font-size: 20px;
+	font-size: 21px;
+        font-weight: 900;
 }
 
 #who, #muhurtham, #when {

@@ -64,6 +64,7 @@
 			audioPlaying = true;
 			document.getElementById('backgroundMusic').play();
 			document.getElementById('overlayClicker').style.display = 'none';
+			document.getElementById('content').style.visibility = 'visible';
 		} else {
 			console.log("Deregistering event.");
 			document.getElementById('overlayClicker').removeEventListener('click', playMusic);
