@@ -17,7 +17,7 @@
 	</div>
 	<div id="overlayClicker"></div>	
 	<div id="clickMe">
-		<span><i class="fas fa-hand-pointer fa-2x"></i></span>
+		<span><i class="fas fa-mouse-pointer fa-3x"></i></span>
 	</div>
     <div class="card">
 		<div id="content">
@@ -57,10 +57,10 @@
 		</div>
 	</div>
 	<audio id="backgroundMusic">
-		<source src="assets/audio/bgm_main.mp3" type="audio/mpeg">
+		<source src="assets/audio/bgm_main_new.mp3" type="audio/mpeg">
 	</audio>
 	<audio id="backgroundMusicMobile">
-		<source src="assets/audio/bgm_main.mp3" type="audio/mpeg">
+		<source src="assets/audio/bgm_main_new.mp3" type="audio/mpeg">
 	</audio>
 </body>
 <script>
@@ -74,14 +74,14 @@
 	function getSoundAndFadeAudio (audiosnippetId) {
 		var sound = document.getElementById(audiosnippetId);
 		// Set the point in playback that fadeout begins. This is for a 2 second fade out.
-		var fadePoint = sound.duration - 10; 
+		var fadePoint = sound.duration - 5; 
 		var fadeAudio = setInterval(function () {
 			// Only fade if past the fade out point or not at zero already
 			if ((sound.currentTime >= fadePoint) && (sound.volume != 0.0)) {
-				sound.volume -= 0.1;
+				sound.volume = Math.max(0, sound.volume - 0.05);
 			}
 			// When volume at zero stop all the intervalling
-			if (sound.volume === 0.0) {
+			if (sound.volume <= 0.0) {
 				clearInterval(fadeAudio);
 			}
 		}, 200);
