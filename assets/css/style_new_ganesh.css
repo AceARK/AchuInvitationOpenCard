@@ -28,7 +28,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-blend-mode: exclusion;
-  background-image: url(../images/gold_parchment.jpg);
+  background-image: url(../images/card_bg_new.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -104,12 +104,12 @@ background-repeat: no-repeat;
 	/*color: #CD853F;*/
 	height: 100%;
 	padding: 10px;
-	padding-top: 86px;
+	padding-top: 70px;
         visibility: hidden;
 }
 
 .separate {
-	margin: 9px;
+	margin: 11px;
 }
 .with {
 	margin-top: -3px;
